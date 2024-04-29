@@ -1,0 +1,173 @@
+set	$mod		Mod4
+set	$left		h
+set	$down		j
+set	$up		  k
+set	$right	l
+set	$term		env KITTY_ENABLE_WAYLAND=1 kitty
+
+# Colors
+set $light #DEDDDA
+set $dark #1D1D1D
+set $focused #3c3836
+set $inactive #1D1D1D
+set $unfocused #282828
+set $urgent #7FA2AC
+set $darkTransparent #1D1D1Dee
+set $urgentTransparent #7FA2AC44
+
+bar {
+    mode hide
+    modifier Alt
+    font Iosevka Nerd Font 10
+    position top
+    status_command while ~/.config/sway/swaybar.sh; do sleep 1; done
+    workspace_buttons no
+    colors {
+        statusline $light
+        background $darkTransparent
+        binding_mode $darkTransparent $urgentTransparent $light
+        focused_workspace $urgentTransparent $urgentTransparent $light
+    }
+}
+
+input type:touchpad {
+tap enabled
+natural_scroll enabled
+} 
+
+floating_modifier	$mod normal
+
+client.focused		#DC8D40 #DC8D40 #DC8D40 #DC8D40
+# class                  border   background  text     indicator  child_border
+client.focused_inactive  #393939  #393939     #ffffff  #393939    #393939
+client.unfocused         #393939  #393939     #888888  #393939    #393939
+default_floating_border pixel 3
+titlebar_padding 1
+titlebar_border_thickness 0
+
+set $lock "swaylock --screenshots --clock --font 'Iosevka Nerd Font' --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --ring-color 1D1D1D --key-hl-color 62A0EA --line-color 00000000 --inside-color 1D1D1D --separator-color 00000000 --text-color FFFFFF && mpc stop"
+bindswitch --reload --locked lid:on exec $lock
+
+gaps inner 10
+gaps outer 1
+default_border pixel 3
+output		eDP-1		scale		1.5
+#output		*		max_render_time 4
+
+seat seat0 xcursor_theme "Breeze_Snow"
+for_window [app_id="^launcher*"] floating enable, sticky enable, resize set 30 ppt 60 ppt
+
+bindsym	$mod+Return exec $term
+bindsym	$mod+q kill
+bindsym	$mod+w exec env MOZ_ENABLE_WAYLAND=1 firefox
+bindsym	$mod+a exec kitty -e yazi
+bindsym $mod+x exec /home/narmis/.local/bin/powermenu.sh
+bindsym $mod+space exec fuzzel
+bindsym $mod+b exec /home/narmis/.local/bin/battery.sh
+bindsym $mod+z exec /home/narmis/.local/bin/kbd-backlight.sh
+bindsym $mod+r exec /home/narmis/.local/bin/hz.sh
+bindsym $mod+g exec kitty -e gomuks
+bindsym $mod+Shift+Return exec kitty -e $(fuzzel --dmenu --config /home/narmis/sway-minimal/fuzzel/fuzzel.ini) & disown
+bindsym	$mod+Shift+r reload
+bindsym $mod+Shift+c exec hyprpicker --autocopy
+bindsym $mod+Shift+x exec swaynag -t warning -m 'Exit sway?' -b 'Yes' 'swaymsg exit'
+
+bindsym	$mod+Shift_R exec slurp | grim -g - - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/screenshots/$(date +'%Y-%m-%d-%H%M%S.png')
+bindsym	$mod+Shift+Shift_R exec slurp | grim -g - - | wl-copy && wl-paste 
+
+bindsym	$mod+$left focus left
+bindsym	$mod+$down focus down
+bindsym	$mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Delete      exec swayr quit-window
+bindsym $mod+Tab         exec swayr switch-to-urgent-or-lru-window
+
+bindsym	$mod+Shift+$left move left
+bindsym	$mod+Shift+$down move down
+bindsym	$mod+Shift+$up move up
+bindsym	$mod+Shift+$right	move right
+
+#bindsym	$mod+g gaps inner current plus 8
+#bindsym	$mod+Shift+g gaps inner current minus 8
+#bindsym	$mod+o gaps outer current plus 8
+#bindsym	$mod+Shift+o gaps outer current minus 8
+
+#bindsym	$mod+b splith
+#bindsym	$mod+v splitv
+bindsym	$mod+d layout toggle split
+
+bindsym	$mod+f fullscreen
+bindsym $mod+s floating toggle
+
+#bindsym $mod+space	focus mode_toggle
+
+bindsym	$mod+1 workspace number 1
+bindsym	$mod+2 workspace number 2
+bindsym	$mod+3 workspace number 3
+bindsym	$mod+4 workspace number 4
+bindsym	$mod+5 workspace number 5
+bindsym	$mod+6 workspace number 6
+bindsym	$mod+7 workspace number 7
+bindsym	$mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+Shift+1 [con_id=__focused__] move to workspace 1, focus
+bindsym $mod+Shift+2 [con_id=__focused__] move to workspace 2, focus
+bindsym $mod+Shift+3 [con_id=__focused__] move to workspace 3, focus
+bindsym $mod+Shift+4 [con_id=__focused__] move to workspace 4, focus
+bindsym $mod+Shift+5 [con_id=__focused__] move to workspace 5, focus
+bindsym $mod+Shift+6 [con_id=__focused__] move to workspace 6, focus
+bindsym $mod+Shift+7 [con_id=__focused__] move to workspace 7, focus
+bindsym $mod+Shift+8 [con_id=__focused__] move to workspace 8, focus
+bindsym $mod+Shift+9 [con_id=__focused__] move to workspace 9, focus
+
+
+bindsym XF86MonBrightnessUp exec ~/.local/bin/volume_brightness.sh brightness_up
+
+bindsym XF86MonBrightnessDown exec ~/.local/bin/volume_brightness.sh brightness_down
+
+bindsym XF86AudioRaiseVolume exec ~/.local/bin/volume_brightness.sh volume_up
+
+bindsym XF86AudioLowerVolume exec ~/.local/bin/volume_brightness.sh volume_down
+
+bindsym XF86AudioMute exec ~/.local/bin/volume_brightness.sh volume_mute
+
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+bindsym Shift+XF86Calculator exec playerctl play-pause
+bindsym XF86Calculator exec mpc toggle
+bindsym Shift+XF86AudioNext exec playerctl next
+bindsym Alt+XF86Calculator exec mpc next
+bindsym Shift+XF86AudioPrev exec playerctl previous
+bindsym Control+XF86Calculator exec mpc prev
+bindsym SHift+XF86AudioStop exec playerctl stop
+bindsym XF86AudioStop exec mpc stop
+#bindsym	$mod+Shift+y		resize grow left 8px
+#bindsym	$mod+			resize shrink left 8px
+#bindsym 	$mod+Shift+u		resize grow down 8px
+#bindsym	$mod+u			resize shrink down 8px
+#bindsym	$mod+Shift+i		resize grow up 8px
+#bindsym	$mod+i			resize shrink up 8px
+#bindsym	$mod+Shift+o		resize grow right 8px
+#bindsym	$mod+o			resize shrink right 8px
+
+#bindsym	$mod+m			layout stacking
+#bindsym 	$mod+. layout tabbed
+#bindsym 	$mod+a focus parent
+
+
+
+exec_always {
+mpc stop
+dunst &
+light -S 50%
+autotiling &
+/home/narmis/.local/bin/pipewire.sh &
+swaybg -i ~/Pictures/glados.jpeg -m fill
+update-notifier
+#mpd-discord-rpc &
+libinput-gestures-setup stop desktop autostart start
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+}
+
+include /etc/sway/config.d/*
