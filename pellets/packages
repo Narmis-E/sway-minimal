@@ -1,0 +1,67 @@
+# Base packages
+base
+base-devel
+efibootmgr
+fuse3
+grub
+less
+linux
+linux-firmware
+mesa
+ntfs-3g
+os-prober
+sudo
+xdg-user-dirs
+libnotify
+python-dbus
+
+# Window Manager
+sway
+autotiling [aur]
+
+# Launchers
+tofi [aur]
+fuzzel [aur]
+
+# Notifs
+dunst
+
+# Applications
+pulse-browser-bin [aur]
+obsidian-bin [aur]
+
+# Sound
+pipewire
+pipewire-pulse
+wireplumber
+pavucontrol
+
+# Terminal
+kitty
+
+# Fonts & icons
+ttf-iosevka-nerd
+breeze-snow-cursor-theme [aur]
+
+# Tools
+git
+neovim
+networkmanager
+vi
+pellets [aur]
+yay [aur]
+yay-debug [aur]
+zig
+wlr-randr
+swaybg
+pfetch [aur]
+light [aur]
+brightnessctl [aur]
+libinput-gestures [aur]
+nwg-displays [aur]
+bottom [aur]
+hyprpicker [aur]
+cliphist
+nm-connection-editor
+swaylock-effects [aur]
+lazygit
