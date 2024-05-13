@@ -5,7 +5,7 @@ set	$up		  k
 set	$right	l
 set	$term		env KITTY_ENABLE_WAYLAND=1 kitty
 
-# Colors
+# Swaybar colors
 set $light #DEDDDA
 set $dark #1D1D1D
 set $focused #3c3836
@@ -15,6 +15,7 @@ set $urgent #7FA2AC
 set $darkTransparent #1D1D1Dee
 set $urgentTransparent #7FA2AC44
 
+# Swaybar config
 bar {
     mode hide
     modifier Alt
@@ -30,36 +31,45 @@ bar {
     }
 }
 
+# Trackpad config
 input type:touchpad {
 tap enabled
-natural_scroll enabled
+natural_scroll disabled
 } 
 
+# Window drag key
 floating_modifier	$mod normal
 
-client.focused		#DC8D40 #DC8D40 #DC8D40 #DC8D40
+# Window Border
+client.focused		#393939 #393939 #393939 #393939
 # class                  border   background  text     indicator  child_border
-client.focused_inactive  #393939  #393939     #ffffff  #393939    #393939
-client.unfocused         #393939  #393939     #888888  #393939    #393939
+client.focused_inactive  #000000  #000000     #ffffff  #000000    #000000
+client.unfocused         #000000  #000000     #888888  #000000    #000000
 default_floating_border pixel 3
 titlebar_padding 1
 titlebar_border_thickness 0
 
+# Lock line
 set $lock "swaylock --screenshots --clock --font 'Iosevka Nerd Font' --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --ring-color 1D1D1D --key-hl-color 62A0EA --line-color 00000000 --inside-color 1D1D1D --separator-color 00000000 --text-color FFFFFF && mpc stop"
+# Call lock on lid close
 bindswitch --reload --locked lid:on exec $lock
 
+# Appearance
 gaps inner 10
 gaps outer 1
 default_border pixel 3
-output		eDP-1		scale		1.5
+output		eDP-2		scale		1.5
+output		HDMI-A-1	scale		0.5
 #output		*		max_render_time 4
+output * bg #000000 solid_color
 
+# Set cursor theme
 seat seat0 xcursor_theme "Breeze_Snow"
-for_window [app_id="^launcher*"] floating enable, sticky enable, resize set 30 ppt 60 ppt
 
+# Keybinds
 bindsym	$mod+Return exec $term
 bindsym	$mod+q kill
-bindsym	$mod+w exec env MOZ_ENABLE_WAYLAND=1 firefox
+bindsym	$mod+w exec env MOZ_ENABLE_WAYLAND=1 pulse-browser
 bindsym	$mod+a exec kitty -e yazi
 bindsym $mod+x exec /home/narmis/.local/bin/powermenu.sh
 bindsym $mod+space exec fuzzel
@@ -80,8 +90,8 @@ bindsym	$mod+$down focus down
 bindsym	$mod+$up focus up
 bindsym $mod+$right focus right
 
-bindsym $mod+Delete      exec swayr quit-window
-bindsym $mod+Tab         exec swayr switch-to-urgent-or-lru-window
+#bindsym $mod+Delete      exec swayr quit-window
+#bindsym $mod+Tab         exec swayr switch-to-urgent-or-lru-window
 
 bindsym	$mod+Shift+$left move left
 bindsym	$mod+Shift+$down move down
@@ -121,7 +131,6 @@ bindsym $mod+Shift+7 [con_id=__focused__] move to workspace 7, focus
 bindsym $mod+Shift+8 [con_id=__focused__] move to workspace 8, focus
 bindsym $mod+Shift+9 [con_id=__focused__] move to workspace 9, focus
 
-
 bindsym XF86MonBrightnessUp exec ~/.local/bin/volume_brightness.sh brightness_up
 
 bindsym XF86MonBrightnessDown exec ~/.local/bin/volume_brightness.sh brightness_down
@@ -155,15 +164,13 @@ bindsym XF86AudioStop exec mpc stop
 #bindsym 	$mod+. layout tabbed
 #bindsym 	$mod+a focus parent
 
-
-
+# Exec
 exec_always {
+swaymsg output "*" bg solid_color fill "#000000"
 mpc stop
-dunst &
-light -S 50%
-autotiling &
-/home/narmis/.local/bin/pipewire.sh &
-swaybg -i ~/Pictures/glados.jpeg -m fill
+dunst
+brightnessctl set 50%
+autotiling
 update-notifier
 #mpd-discord-rpc &
 libinput-gestures-setup stop desktop autostart start
