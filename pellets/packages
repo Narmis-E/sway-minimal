@@ -26,6 +26,9 @@ fuzzel [aur]
 # Notifs
 dunst
 
+# File manager
+yazi
+
 # Applications
 pulse-browser-bin [aur]
 obsidian-bin [aur]
@@ -66,3 +69,4 @@ nm-connection-editor
 swaylock-effects [aur]
 lazygit
 eza
+pacman-contrib
