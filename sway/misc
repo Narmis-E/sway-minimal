@@ -1,0 +1,16 @@
+### Misc config options
+
+# Trackpad config
+input type:touchpad {
+tap enabled
+natural_scroll disabled
+} 
+
+# Window drag key
+floating_modifier	$mod normal
+
+# Lock line
+set $lock "swaylock --screenshots --clock --font 'Iosevka Nerd Font' --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --ring-color 1D1D1D --key-hl-color 62A0EA --line-color 00000000 --inside-color 1D1D1D --separator-color 00000000 --text-color FFFFFF && mpc stop"
+# Call lock on lid close
+bindswitch --reload --locked lid:on exec $lock
+
