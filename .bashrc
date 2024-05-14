@@ -9,7 +9,13 @@ export OSH='/home/narmis/.oh-my-bash'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="brainy"
+OSH_THEME="binaryanomaly"
+
+# Themes I like
+# brainy
+# zitron
+# agnoster
+# clean
 
 # If you set OSH_THEME to "random", you can ignore themes you don't like.
 # OMB_THEME_RANDOM_IGNORED=("powerbash10k" "wanelo")
@@ -123,9 +129,10 @@ export PATH=$PATH:~/.local/bin:/usr/local/bin/
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export QT_QPA_PLATFORMTHEME=gtk2
+export TERMINAL=kitty
 
 # Startup
-pfetch
+palette.sh
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
