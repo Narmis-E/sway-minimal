@@ -1,0 +1,15 @@
+### Startup scripts
+
+# Exec
+exec_always {
+swaymsg output * #000000 solid_color fill
+mpc stop
+dunst
+brightnessctl set 50%
+autotiling
+update-notifier
+#mpd-discord-rpc &
+libinput-gestures-setup stop desktop autostart start
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+}
+
