@@ -1,6 +1,7 @@
-#╔╗╔┌─┐┬─┐┌┬┐┬┌─┐   ╔═╗
-#║║║├─┤├┬┘││││└─┐───║╣ 
-#╝╚╝┴ ┴┴└─┴ ┴┴└─┘   ╚═╝
+### sway/config
+# ╔╗╔┌─┐┬─┐┌┬┐┬┌─┐   ╔═╗
+# ║║║├─┤├┬┘││││└─┐───║╣ 
+# ╝╚╝┴ ┴┴└─┴ ┴┴└─┘   ╚═╝
 ### Narmis-e Dotfiles for sway-minimal: https://github.com/narmis-e/sway-minimal
 
 # Appearance config

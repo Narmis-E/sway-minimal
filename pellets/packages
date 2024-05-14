@@ -1,3 +1,9 @@
+### pellets/packages
+# ╔╗╔┌─┐┬─┐┌┬┐┬┌─┐   ╔═╗
+# ║║║├─┤├┬┘││││└─┐───║╣ 
+# ╝╚╝┴ ┴┴└─┴ ┴┴└─┘   ╚═╝
+### Narmis-e Dotfiles for sway-minimal: https://github.com/narmis-e/sway-minimal
+
 # Base packages
 base
 base-devel

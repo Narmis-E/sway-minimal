@@ -1,3 +1,9 @@
+### .bashrc
+# ╔╗╔┌─┐┬─┐┌┬┐┬┌─┐   ╔═╗
+# ║║║├─┤├┬┘││││└─┐───║╣ 
+# ╝╚╝┴ ┴┴└─┴ ┴┴└─┘   ╚═╝
+### Narmis-e Dotfiles for sway-minimal: https://github.com/narmis-e/sway-minimal
+
 # Enable the subsequent settings only in interactive sessions
 case $- in
   *i*) ;;
