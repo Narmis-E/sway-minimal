@@ -1,0 +1,48 @@
+### Appearance
+
+# Swaybar colors
+set $light #DEDDDA
+set $dark #1D1D1D
+set $focused #3c3836
+set $inactive #1D1D1D
+set $unfocused #282828
+set $urgent #7FA2AC
+set $darkTransparent #1D1D1Dee
+set $urgentTransparent #7FA2AC44
+
+# Border colours
+set $focused #393939
+set $inactive #000000
+
+# Swaybar config
+bar {
+    mode hide
+    modifier Alt
+    font Iosevka Nerd Font 10
+    position top
+    status_command while ~/.config/sway/swaybar.sh; do sleep 1; done
+    workspace_buttons no
+    colors {
+        statusline $light
+        background $darkTransparent
+        binding_mode $darkTransparent $urgentTransparent $light
+        focused_workspace $urgentTransparent $urgentTransparent $light
+    }
+}
+
+# Window Border
+client.focused		#393939 #393939 #393939 #393939
+# class                  border   background  text     indicator  child_border
+client.focused_inactive  #000000  #000000     #ffffff  #000000    #000000
+client.unfocused         #000000  #000000     #888888  #000000    #000000
+default_floating_border pixel 3
+titlebar_padding 1
+titlebar_border_thickness 0
+
+# Appearance
+gaps inner 10
+gaps outer 1
+default_border pixel 3
+
+# Set cursor theme
+seat seat0 xcursor_theme "Breeze_Snow"
