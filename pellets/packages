@@ -20,6 +20,7 @@ sudo
 xdg-user-dirs
 libnotify
 python-dbus
+inetutils
 
 # Window Manager
 sway
@@ -38,6 +39,7 @@ yazi
 # Applications
 pulse-browser-bin [aur]
 obsidian-bin [aur]
+discordo-git [aur]
 
 # Sound
 pipewire
@@ -76,3 +78,7 @@ swaylock-effects [aur]
 lazygit
 eza
 pacman-contrib
+ffmpeg
+go
+slurp
+grim
