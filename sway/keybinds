@@ -8,12 +8,15 @@ set	$up		k
 set	$right		l
 set	$term		env KITTY_ENABLE_WAYLAND=1 kitty
 set	$browser	env MOZ_ENABLE_WAYLAND=1 pulse-browser
+set	$dc		kitty -e discordo
+set	$yazi		kitty -e yazi
 
 # Common apps
 bindsym	$mod+Return 		exec $term
 bindsym	$mod+q			kill
-bindsym	$mod+w 			exec env MOZ_ENABLE_WAYLAND=1 pulse-browser
-bindsym	$mod+a 			exec kitty -e yazi
+bindsym	$mod+w 			exec $browser
+bindsym	$mod+a 			exec $yazi
+bindsym $mod+d			exec $dc
 bindsym $mod+x 			exec /home/narmis/.local/bin/powermenu.sh
 bindsym $mod+space 		exec fuzzel
 bindsym $mod+z 			exec /home/narmis/.local/bin/kbd-backlight.sh
@@ -41,7 +44,6 @@ bindsym	$mod+Shift+$right	move right
 # Split toggles
 bindsym	$mod+b 			splith
 bindsym	$mod+v 			splitv
-bindsym	$mod+d 			layout toggle split
 
 # Fullscreen toggles
 bindsym	$mod+f 			fullscreen
