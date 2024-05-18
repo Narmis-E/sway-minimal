@@ -1,6 +1,6 @@
 ### .bashrc
 # ╔╗╔┌─┐┬─┐┌┬┐┬┌─┐   ╔═╗
-# ║║║├─┤├┬┘││││└─┐───║╣ 
+# ║║║├─┤├┬┘││││└─┐───║╣
 # ╝╚╝┴ ┴┴└─┴ ┴┴└─┘   ╚═╝
 ### Narmis-e Dotfiles for sway-minimal: https://github.com/narmis-e/sway-minimal
 
@@ -108,7 +108,7 @@ completions=(
 # Add wisely, as too many aliases slow down shell startup.
 aliases=(
   general
-  nvim
+  vim
   ls
   program
 )
