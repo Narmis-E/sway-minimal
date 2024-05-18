@@ -1,3 +1,9 @@
+" README.md
+" ╔╗╔┌─┐┬─┐┌┬┐┬┌─┐   ╔═╗
+" ║║║├─┤├┬┘││││└─┐───║╣
+" ╝╚╝┴ ┴┴└─┴ ┴┴└─┘   ╚═╝
+" Narmis-e Dotfiles for sway-minimal: https://github.com/narmis-e/sway-minimal
+
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -123,7 +129,11 @@ map § <Esc>
 map! § <C-c>
 nnoremap py :!python3 %<CR>
 
-let g:floaterm_keymap_new    = '<F7>'
-let g:floaterm_keymap_prev   = '<F8>'
-let g:floaterm_keymap_next   = '<F9>'
-let g:floaterm_keymap_toggle = '<F12>'
+nnoremap   <silent>   <F7>    :FloatermNew cd %:p:h<CR>
+tnoremap   <silent>   <F7>    <C-\><C-n>:FloatermNew<CR>
+nnoremap   <silent>   <F8>    :FloatermPrev<CR>
+tnoremap   <silent>   <F8>    <C-\><C-n>:FloatermPrev<CR>
+nnoremap   <silent>   <F9>    :FloatermNext<CR>
+tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNext<CR>
+nnoremap   <silent>   <F12>   :FloatermToggle<CR>
+tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle cd %:p:h<CR>
