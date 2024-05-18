@@ -1,6 +1,6 @@
 ### pellets/packages
 # ╔╗╔┌─┐┬─┐┌┬┐┬┌─┐   ╔═╗
-# ║║║├─┤├┬┘││││└─┐───║╣ 
+# ║║║├─┤├┬┘││││└─┐───║╣
 # ╝╚╝┴ ┴┴└─┴ ┴┴└─┘   ╚═╝
 ### Narmis-e Dotfiles for sway-minimal: https://github.com/narmis-e/sway-minimal
 
@@ -40,6 +40,7 @@ yazi
 pulse-browser-bin [aur]
 obsidian-bin [aur]
 discordo-git [aur]
+gomuks [aur]
 
 # Sound
 pipewire
@@ -56,7 +57,6 @@ breeze-snow-cursor-theme [aur]
 
 # Tools
 git
-neovim
 networkmanager
 vi
 pellets [aur]
@@ -82,3 +82,5 @@ ffmpeg
 go
 slurp
 grim
+unzip
+vim
