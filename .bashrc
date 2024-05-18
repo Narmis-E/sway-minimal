@@ -133,7 +133,7 @@ source "$OSH"/oh-my-bash.sh
 
 # Env vars
 export PATH=$PATH:~/.local/bin:/usr/local/bin/
-export VISUAL=nvim
+export VISUAL=vim
 export EDITOR="$VISUAL"
 export QT_QPA_PLATFORMTHEME=gtk2
 export TERMINAL=kitty
