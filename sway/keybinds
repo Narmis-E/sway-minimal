@@ -8,7 +8,7 @@ set	$up		k
 set	$right		l
 set	$term		env KITTY_ENABLE_WAYLAND=1 kitty
 set	$browser	env MOZ_ENABLE_WAYLAND=1 pulse-browser
-set	$dc		kitty -e discordo
+set	$dc		kitty -e ~/.local/bin/run-discordo.sh
 set	$yazi		kitty -e yazi
 
 # Common apps
@@ -27,7 +27,7 @@ bindsym	$mod+Shift+r 		reload
 bindsym $mod+Shift+c 		exec hyprpicker --autocopy
 bindsym $mod+Shift+x 		exec swaynag -t warning -m 'Exit sway?' -b 'Yes' 'swaymsg exit'
 bindsym	$mod+Shift_R 		exec slurp | grim -g - - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/screenshots/$(date +'%Y-%m-%d-%H%M%S.png')
-bindsym	$mod+Shift+Shift_R 	exec slurp | grim -g - - | wl-copy && wl-paste 
+bindsym	$mod+Shift+Shift_R 	exec slurp | grim -g - - | wl-copy && wl-paste
 
 # Focus movement
 bindsym	$mod+$left 		focus left
