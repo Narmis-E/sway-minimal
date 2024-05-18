@@ -11,6 +11,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'fehawen/sc.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'voldikss/vim-floaterm'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -43,7 +46,6 @@ set shiftwidth=4
 set autoindent
 set nonumber
 set lazyredraw
-set cursorline
 set nocursorcolumn
 set ffs=unix,dos,mac
 set wrap
@@ -54,6 +56,8 @@ set noswapfile
 set maxmempattern=20000
 set completeopt-=preview
 set omnifunc=syntaxcomplete#Complete
+
+:set guicursor=n-c-v:block-nCursor
 
 set path+=**
 set wildmenu
@@ -67,6 +71,8 @@ set listchars+=trail:•,
 set fillchars+=vert:\ ,
 
 colorscheme sc
+let g:airline_theme='term'
+let g:airline_powerline_fonts = 1
 
 let g:ale_sign_info = "•"
 let g:ale_sign_error = "•"
