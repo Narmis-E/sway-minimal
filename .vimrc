@@ -63,8 +63,6 @@ set maxmempattern=20000
 set completeopt-=preview
 set omnifunc=syntaxcomplete#Complete
 
-:set guicursor=n-c-v:block-nCursor
-
 set path+=**
 set wildmenu
 set wildignore+=**/node_modules/**
