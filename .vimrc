@@ -12,15 +12,14 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'dense-analysis/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'fehawen/sc.vim'
-Plug 'Valloric/YouCompleteMe'
 Plug 'voldikss/vim-floaterm'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
-
+Plug 'airblade/vim-gitgutter'
+Plug 'lifepillar/vim-mucomplete'
 call plug#end()
 
 syntax on
@@ -43,7 +42,6 @@ set ruler
 set showmatch
 set mat=2
 set magic
-set signcolumn=no
 set hlsearch
 set tabstop=4
 set softtabstop=4
@@ -52,7 +50,6 @@ set shiftwidth=4
 set autoindent
 set nonumber
 set lazyredraw
-set nocursorcolumn
 set ffs=unix,dos,mac
 set wrap
 set pumheight=10
@@ -74,16 +71,15 @@ set listchars+=tab:│\ ,
 set listchars+=trail:•,
 set fillchars+=vert:\ ,
 
+inoremap { {}<Esc>ha
+inoremap [ []<Esc>ha
+inoremap " ""<Esc>ha
+inoremap ' ''<Esc>ha
+inoremap ` ``<Esc>ha
+
 colorscheme sc
 let g:airline_theme='term'
 let g:airline_powerline_fonts = 1
-
-let g:ale_sign_info = "•"
-let g:ale_sign_error = "•"
-let g:ale_sign_warning = "•"
-let g:ale_sign_style_error = "•"
-let g:ale_sign_style_warning = "•"
-let g:ale_completion_enabled = 1
 
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeShowHidden = 1
@@ -96,24 +92,7 @@ let g:NERDTreeWinSize = 31
 
 let g:sc_background_light = 1
 let g:sc_highlight_comments_only = 0
-let g:sl_hide_syntax_item = 1
-let g:sl_hide_file_type = 1
 
-au VimResized * wincmd=
-au BufWritePre * %s/\s\+$//e
-au StdinReadPre * let s:std_in=1
-au VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-au WinEnter,BufEnter * call matchadd('ColorColumn', '\%81v', 100)
-au WinLeave,BufLeave * call clearmatches()
-au FileType c,cpp setlocal noexpandtab softtabstop=4 shiftwidth=4
-au FileType python setlocal textwidth=79
-
-augroup SyntaxSettings
-    autocmd!
-    autocmd BufNewFile,BufRead *.tsx set filetype=typescript
-augroup END
-
-inoremap <expr><S-TAB> pumvisible() ? "\<Esc>" : "\<C-n>"
 map <C-n> :NERDTreeToggle<CR>
 map <C-f> :find<Space>
 map <C-s> :vert ter<CR>
@@ -134,4 +113,4 @@ tnoremap   <silent>   <F8>    <C-\><C-n>:FloatermPrev<CR>
 nnoremap   <silent>   <F9>    :FloatermNext<CR>
 tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNext<CR>
 nnoremap   <silent>   <F12>   :FloatermToggle<CR>
-tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle cd %:p:h<CR>
+tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
