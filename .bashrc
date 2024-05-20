@@ -108,7 +108,7 @@ completions=(
 # Add wisely, as too many aliases slow down shell startup.
 aliases=(
   general
-  vim
+  nvim
   ls
   program
 )
@@ -133,7 +133,7 @@ source "$OSH"/oh-my-bash.sh
 
 # Env vars
 export PATH=$PATH:~/.local/bin:/usr/local/bin/
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 export QT_QPA_PLATFORMTHEME=gtk2
 export TERMINAL=kitty
