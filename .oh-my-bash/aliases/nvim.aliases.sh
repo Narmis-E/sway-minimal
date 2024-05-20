@@ -1,10 +1,9 @@
 #! bash oh-my-bash.module
 #  ---------------------------------------------------------------------------
 
-# nvim & vim
-alias nv='nvim'
-alias v='vim'
-alias vs="vim $HOME/sway-minimal/sway/config"
+# nvim
+alias v='nvim'
+alias vs="nvim $HOME/sway-minimal/sway/config"
 alias sv='sudoedit'
 
 
