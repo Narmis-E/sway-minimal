@@ -87,3 +87,8 @@ vim
 cmake
 neovim
 ripgrep
+nwg-look [aur]
+adw-gtk3 [aur]
+fprintd [aur]
+libfprint-2-tod1-goodix [aur]
+python-requests
