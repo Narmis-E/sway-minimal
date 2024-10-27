@@ -1,0 +1,1 @@
+swaylock --screenshots --clock --font 'Iosevka Nerd Font' --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --ring-color 1D1D1D --key-hl-color 62A0EA --line-color 00000000 --inside-color 1D1D1D --separator-color 00000000 --text-color FFFFFF & mpc stop
