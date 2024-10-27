@@ -26,7 +26,7 @@ bindsym $mod+Shift+Return 	exec kitty -e $(fuzzel --dmenu --config /home/narmis/
 bindsym	$mod+Shift+r 		reload
 bindsym $mod+Shift+c 		exec hyprpicker --autocopy
 bindsym $mod+Shift+x 		exec swaynag -t warning -m 'Exit sway?' -b 'Yes' 'swaymsg exit'
-bindsym	$mod+Shift_R 		exec slurp | grim -g - - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/screenshots/$(date +'%Y-%m-%d-%H%M%S.png')
+bindsym	$mod+Shift_R 		exec slurp | grim -g | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/screenshots/$(date +'%Y-%m-%d-%H%M%S.png')
 bindsym	$mod+Shift+Shift_R 	exec slurp | grim -g - - | wl-copy && wl-paste
 
 # Focus movement

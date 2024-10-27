@@ -92,3 +92,7 @@ adw-gtk3 [aur]
 fprintd [aur]
 libfprint-2-tod1-goodix [aur]
 python-requests
+amdvlk
+mpv
+ffmpeg4.4
+libva-mesa-driver
